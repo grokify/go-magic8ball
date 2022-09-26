@@ -2,12 +2,22 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 
 	"github.com/grokify/go-magic8ball/magic"
 )
 
 func main() {
-	for i := 0; i < 100; i++ {
+	max := 1
+	if len(os.Args) > 1 {
+		maxInt, err := strconv.Atoi(os.Args[1])
+		if err == nil && maxInt > 1 {
+			max = maxInt
+		}
+	}
+
+	for i := 1; i <= max; i++ {
 		resp, err := magic.Shake()
 		if err != nil {
 			panic(err)
