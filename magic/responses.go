@@ -35,6 +35,7 @@ var responses = []string{
 	"Very doubtful.",
 }
 
+// ErrResponseNotFound is the error when a supplied 8 ball response isn't found.
 var ErrResponseNotFound = errors.New("response not found")
 
 func responseIndex(r string) (int, error) {
@@ -46,6 +47,8 @@ func responseIndex(r string) (int, error) {
 	return -2, ErrResponseNotFound
 }
 
+// ResponseType returns whether a reponse is positive, neutral, or negative.
+// Values returned are `1` for positive, `0` for neutral, and `-1` for negative.
 func ResponseType(r string) (int, error) {
 	idx, err := responseIndex(r)
 	if err != nil {
@@ -59,6 +62,7 @@ func ResponseType(r string) (int, error) {
 	return -1, nil
 }
 
+// Shake returns a Magic 8 Ball response. It returns an error if `crypto/rand` fails.
 func Shake() (string, error) {
 	idx, err := cryptoRandInt(len(responses))
 	if err != nil {
