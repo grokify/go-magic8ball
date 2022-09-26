@@ -47,7 +47,7 @@ func responseIndex(r string) (int, error) {
 	return -2, ErrResponseNotFound
 }
 
-// ResponseType returns whether a reponse is positive, neutral, or negative.
+// ResponseType returns whether a response is positive, neutral, or negative.
 // Values returned are `1` for positive, `0` for neutral, and `-1` for negative.
 func ResponseType(r string) (int, error) {
 	idx, err := responseIndex(r)
