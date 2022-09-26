@@ -7,6 +7,18 @@
 
 Simple Magic 8 Ball package.
 
+## CLI
+
+```bash
+% go install github.com/grokify/go-magic8ball/cmd/magic8ball
+% magic8ball
+```
+
+
+## Library
+
+See the docs: at [pkg.go.dev/github.com/grokify/go-magic8ball](https://pkg.go.dev/github.com/grokify/go-magic8ball)
+
  [used-by-svg]: https://sourcegraph.com/github.com/grokify/go-magic8ball/-/badge.svg
  [used-by-url]: https://sourcegraph.com/github.com/grokify/go-magic8ball?badge
  [build-status-svg]: https://github.com/grokify/go-magic8ball/workflows/test/badge.svg
