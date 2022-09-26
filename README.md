@@ -5,7 +5,7 @@
 [![Docs][docs-godoc-svg]][docs-godoc-url]
 [![License][license-svg]][license-url]
 
-Simple Magic 8 Ball package.
+Simple [Magic 8 Ball](https://en.wikipedia.org/wiki/Magic_8_Ball) package.
 
 ## CLI
 
