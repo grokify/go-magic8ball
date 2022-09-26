@@ -1,4 +1,4 @@
-package magic
+package magic8ball
 
 import (
 	"crypto/rand"

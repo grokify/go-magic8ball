@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/grokify/go-magic8ball/magic"
+	"github.com/grokify/go-magic8ball"
 )
 
 func main() {
@@ -18,11 +18,11 @@ func main() {
 	}
 
 	for i := 1; i <= max; i++ {
-		resp, err := magic.Shake()
+		resp, err := magic8ball.Shake()
 		if err != nil {
 			panic(err)
 		}
-		respType, err := magic.ResponseType(resp)
+		respType, err := magic8ball.ResponseType(resp)
 		if err != nil {
 			panic(err)
 		}
