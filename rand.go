@@ -30,5 +30,5 @@ func (CryptoRandSource) Seed(int64) {}
 
 // Intn returns a random number backed by `crypto/rand`.
 func Intn(n uint) int {
-	return mrand.New(NewCryptoRandSource()).Intn(int(n))
+	return mrand.New(NewCryptoRandSource()).Intn(int(n)) // #nosec G404
 }
