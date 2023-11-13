@@ -1,9 +1,7 @@
 package magic8ball
 
 import (
-	"crypto/rand"
 	"errors"
-	"math/big"
 )
 
 var responses = []string{
@@ -63,18 +61,6 @@ func ResponseType(r string) (int, error) {
 }
 
 // Shake returns a Magic 8 Ball response. It returns an error if `crypto/rand` fails.
-func Shake() (string, error) {
-	idx, err := cryptoRandInt(len(responses))
-	if err != nil {
-		return "", err
-	}
-	return responses[idx], nil
-}
-
-func cryptoRandInt(max int) (int, error) {
-	num, err := rand.Int(rand.Reader, big.NewInt(int64(max)))
-	if err != nil {
-		return 0, err
-	}
-	return int(num.Int64()), nil
+func Shake() string {
+	return responses[Intn(uint(len(responses)))]
 }
